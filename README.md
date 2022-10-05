@@ -1,4 +1,4 @@
-# Milestone 2
+# Milestone 1
 Creation of the variables of the game.
 In order to complete the Hangman Project, you will need to create variables of the game with basic Python commands.
 
