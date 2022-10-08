@@ -1,4 +1,4 @@
-# Milestone 2
+# Milestone 1
 
 Creation of the variables of the game.
 In order to complete the Hangman Project, you will need to create variables of the game with basic Python commands.
@@ -58,6 +58,13 @@ def ask_for_input():
     check_guess(guess)
 
 ask_for_input()
+
+# Milestone 3
+
+Creation of game class and methods for running the checks.
+
+• check_guess() method: This method checks if the letter is present in the word.
+• ask_for_input() method: This method creates a list of single alphabetical characters with the user input.
 
 
 
