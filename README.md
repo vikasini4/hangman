@@ -66,6 +66,52 @@ Creation of game class and methods for running the checks.
 • check_guess() method: This method checks if the letter is present in the word.
 • ask_for_input() method: This method creates a list of single alphabetical characters with the user input.
 
+import random
+
+
+class Hangman():
+    def __init__(self,word_list,num_lives):
+
+     self.word_list = word_list
+     self.num_lives = num_lives
+
+     self.word = random.choice(word_list)
+     self.word_guessed = [",", ",", ",", ",", ","]
+     self.num_letters = int(len(set(self.word) - set(self.word_guessed)))
+     self.num_lives = 5
+     self.word_list = word_list
+     self.list_of_guesses =[]
+    
+    def check_guess(self,guess):
+        guess = guess.lower()
+        self.word_guessed.extend(guess)
+
+        if guess in self.word:
+            print("Good guess!", guess, "is in the word")
+
+            for i, letter in enumerate(self.word): 
+                if letter == guess:
+                    self.word_guessed[i] = guess 
+            self.num_letters -= 1
+        else :
+            self.num_lives -= 1
+            print("Sorry,", guess, "is not in the word. Try again.")
+            print("You have", self.num_lives,"lives left." )
+
+        self.list_of_guesses.append(guess)
+
+
+    def ask_for_input(self):
+        while True :
+            guess = input("Enter a single letter")
+            if not guess.isalpha() and not len(guess) == 1:
+                print("Invalid letter. Please, enter a single alphabetic character.")
+            elif guess in self.list_of_guesses :
+                print("You already tried that letter!")
+            else :
+             self.check_guess(guess)
+             break
+
 
 
 
